@@ -15,11 +15,12 @@ app.use(bodyParser.json());
 
 app.use('/', userRoute);
 
-app.get('/health', (req, res)=>{
+app.get('/', (req, res)=>{
     res.status(200).json({
         message: " Server is running"
     });
 });
+
 
 const port = process.env.PORT || 3000
 app.listen(port, ()=>{
