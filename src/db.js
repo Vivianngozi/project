@@ -1,9 +1,9 @@
-import mongoose from "mongoose";
+import MongoClient from "mongoose";
 
 export default {
     connect() {
-        mongoose.connect('mongodb://100.20.92.101/project');
-        const db = mongoose.connection;
+        MongoClient.connect('mongodb://localhost/project', { useNewUrlParser: true, useUnifiedTopology: true });
+        const db = MongoClient.connection;
         db.on("error", console.error.bind(console, "connection error: "));
         db.once("open", function() {
             console.log("Connected Successfully");
