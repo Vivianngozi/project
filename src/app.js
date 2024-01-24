@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 
 app.use('/', userRoute);
 
-app.get('/', (req, res)=>{
+app.get('/health', (req, res)=>{
     res.status(200).json({
         message: " Server is running"
     });
