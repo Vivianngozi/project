@@ -24,7 +24,8 @@ export async function register(req, res) {
         res.status(201).json({token: jwt.sign({id: user.id, user: true}, process.env.SECRET)})
     } catch (error) {
         res.status(500).json({message: "Internval server error"});
-        console.log(error)
+        console.log(error);
+        return;
     }
     
 
